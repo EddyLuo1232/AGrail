@@ -212,7 +212,7 @@
         <div class="content has-text-justified">
           <p>Considering the complexity of the OS environment and its diverse interaction routes—such as process management, user permission management, and file system access control—OS agents are exposed to a broader range of attack scenarios. These include <strong>Prompt Injection Attack</strong>: Manipulating information in environment to alter the agent's actions, leading it to perform unintended operations (e.g., modifying agent output).
 <strong>System Sabotage Attack</strong>: Directing the agent to take explicitly harmful actions against the system (e.g., corrupting memory, damaging files, or halting processes).
-<strong>Environment Attack</strong>: An attack where an agent's action appears harmless in isolation but becomes harmful when considering the environment situation (e.g., rename file resulting in data loss). To address this challenge, we propose Safe-OS, a high-quality, carefully designed, and comprehensive dataset designed to evaluate the robustness of online OS agents. These attacks are carefully designed based on successful attacks targeting GPT-4-based OS agents. Additionally, our dataset simulates real-world OS environments using Docker, defining two distinct user identities: one as a root user with sudo privileges, and the other as a regular user without sudo access. Safe-OS includes both normal and harmful scenarios, with operations covering both single-step and multi-step tasks.</p>
+<strong>Environment Attack</strong>: An attack where an agent's action appears harmless in isolation but becomes harmful when considering the environment situation (e.g., rename file resulting in data loss). To address this challenge, we propose <strong>Safe-OS</strong>, a high-quality, carefully designed, and comprehensive dataset designed to evaluate the robustness of online OS agents. These attacks are carefully designed based on successful attacks targeting GPT-4-based OS agents. Additionally, our dataset simulates real-world OS environments using Docker, defining two distinct user identities: one as a root user with sudo privileges, and the other as a regular user without sudo access. Safe-OS includes both normal and harmful scenarios, with operations covering both single-step and multi-step tasks.</p>
         </div>
       </div>
     </div>
@@ -239,6 +239,23 @@
           </ul>
         </div>
         
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">🔔 Evaluation</h2>
+        <div class="content has-text-justified">
+          <p></p>
+        </div>
+        <img src="static/images/result.png" alt="MY ALT TEXT" style="width: 100%; max-width: 100%;"/>
+        <h2 class="subtitle has-text-centered" style="font-size: smaller;">
+AGrail demonstrates strong performance in both task-specific and systemic risk detection. As shown in Tables 1 and 2, AGrail consistently ranks second across specific tasks (e.g., Mind2Web-SC and EICU-AC), regardless of using GPT-4o or Claude-3.5-Sonnet. In systemic risk detection on Safe-OS and AdvWeb, AGrail based on Claude-3.5-Sonnet achieves 0% ASR against prompt injection attacks on OS and AdvWeb, while blocking only 4.4% of benign actions on OS. When against environment and system sabotage attack attacks, ASR remain low at 5% and 3.8%. For EIA attacks, AGrail achieves 6% ASR in action grounding and 28% in action generation while maintaining 86.7% accuracy on normal web tasks, demonstrating the trade-off performance between robustness and effectiveness. In contrast, model-based defenses perform well in specific tasks but may block 49.2% of benign actions in Safe-OS, which show overly restrictive detection in these baselines. Even with task-specific safety criteria, LLaMA-Guard3 struggles to defend risks across these scenarios, which demonstrates that these LLM guardrails have difficulty in detecting these risks for LLM agents.
+        </h2>
       </div>
     </div>
   </div>
